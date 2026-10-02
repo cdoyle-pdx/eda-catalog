@@ -1,0 +1,70 @@
+apiVersion: core.eda.nokia.com/v1
+kind: Manifest
+metadata:
+  name: snake
+spec:
+  appInfo:
+    categories:
+      - uncategorised
+    documentation: snake/docs
+    ociSpecVersion: v1.0.0
+    appImageDigest: sha256:568b9934d3de898bb24a443b5c668c26dfdab8ca573ae39294e49040c09644e4
+  author: cdoyle-pdx
+  dependencies:
+    - file:
+        path: utils
+    - file:
+        path: common
+    - file:
+        path: core
+    - file:
+        path: snake/api
+    - file:
+        path: snake/intents
+  description: Nokia Snake — a playable arcade game that draws its arena from your live fabric topology, with scores stored as EDA resources.
+  group: eda.cdoyle.dev
+  image: ghcr.io/cdoyle-pdx/snake:v1.0.0
+  supportedCoreVersions:
+    - v6.0.0
+  title: Snake
+  version: v1alpha1
+  components:
+    - crd:
+        api:
+          expose: readWrite
+        path: snake/crds/eda.cdoyle.dev_snakescores.yaml
+        schema: snake/openapiv3/eda_oas_eda.cdoyle.dev_snakescores.json
+        ui:
+          category: Snake
+          name: Snake Scores
+        names:
+          kind: SnakeScore
+          listKind: SnakeScoreList
+          plural: snakescores
+          singular: snakescore
+    - cr:
+        path: snake/k8s/deployment.yaml
+    - cr:
+        path: snake/k8s/service.yaml
+    - cr:
+        path: snake/k8s/roles.yaml
+    - cr:
+        path: snake/k8s/httpproxy.yaml
+    - view:
+        path: snake/ui/snake_dashboard.json
+        ui:
+          category: Snake
+          name: Play Snake
+    - crd:
+        api:
+          expose: readWrite
+        path: snake/crds/eda.cdoyle.dev_snakeconfigs.yaml
+        schema: snake/openapiv3/eda_oas_eda.cdoyle.dev_snakeconfigs.json
+        ui:
+          category: Snake
+          name: Snake Config
+        names:
+          kind: SnakeConfig
+          listKind: SnakeConfigList
+          plural: snakeconfigs
+          singular: snakeconfig
