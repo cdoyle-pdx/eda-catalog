@@ -1,7 +1,7 @@
 # eda-catalog
 A repo of apps for Nokia's Event Driven Automation orchestration platform.
 
-'''
+```text
 apiVersion: appstore.eda.nokia.com/v1
 kind: Catalog
 metadata:
@@ -21,8 +21,8 @@ spec:
         MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOPyd97Sd7SU9SybQkBfnA7fMc1Ib
         BMrdNVTrLuunRV2tqo/a83Wh1vJ+qkAwRpfUYeZq88EveiOUUmVg0u/6sQ==
         -----END PUBLIC KEY-----
-'''
-'''
+```
+```
 kubectl apply -f signingkey.yaml
 kubectl get signingkeys -A
-'''
+```
