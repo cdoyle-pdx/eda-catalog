@@ -1,6 +1,8 @@
 # eda-catalog
 A repo of apps for Nokia's Event Driven Automation orchestration platform.
 
+Use the code below to connect your EDA cluster to my catelog.
+
 ```
 apiVersion: appstore.eda.nokia.com/v1
 kind: Catalog
@@ -15,7 +17,8 @@ spec:
   skipTLSVerify: false
   title: cdoyle-pdx EDA Apps
 ```
-Create a YAML file named signingkey.yaml
+
+Create a file named signingkey.yaml and paste the following code into it.
 ```
 apiVersion: appstore.eda.nokia.com/v1
 kind: SigningKey
@@ -31,7 +34,7 @@ spec:
         BMrdNVTrLuunRV2tqo/a83Wh1vJ+qkAwRpfUYeZq88EveiOUUmVg0u/6sQ==
         -----END PUBLIC KEY-----
 ```
-Load it into EDA
+On your EDA server, install the public key YAML file so you don't get app installation cert errors!
 ```
 kubectl apply -f signingkey.yaml
 kubectl get signingkeys -A
