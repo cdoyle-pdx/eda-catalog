@@ -1,7 +1,7 @@
 # eda-catalog
 A repo of apps for Nokia's Event Driven Automation orchestration platform.
 
-```text
+```
 apiVersion: appstore.eda.nokia.com/v1
 kind: Catalog
 metadata:
@@ -14,6 +14,15 @@ spec:
   remoteURL: https://github.com/cdoyle-pdx/eda-catalog
   skipTLSVerify: false
   title: cdoyle-pdx EDA Apps
+```
+Create a YAML file named signingkey.yaml
+```
+apiVersion: appstore.eda.nokia.com/v1
+kind: SigningKey
+metadata:
+  name: cdoyle-pdx
+  namespace: eda-system
+spec:
   publicKeys:
     - title: cdoyle-pdx
       key: |
@@ -22,6 +31,7 @@ spec:
         BMrdNVTrLuunRV2tqo/a83Wh1vJ+qkAwRpfUYeZq88EveiOUUmVg0u/6sQ==
         -----END PUBLIC KEY-----
 ```
+Load it into EDA
 ```
 kubectl apply -f signingkey.yaml
 kubectl get signingkeys -A
