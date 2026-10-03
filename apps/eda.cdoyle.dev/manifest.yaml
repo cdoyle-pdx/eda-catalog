@@ -8,7 +8,7 @@ spec:
       - uncategorised
     documentation: snake/docs
     ociSpecVersion: v1.0.0
-    appImageDigest: sha256:abff6ab1b6c0bc92dce489d0d3cf8780b3979466f3dc30ef3cc9e0e60e9c77c1
+    appImageDigest: sha256:fd5bde4df8bbb462a862477e35530b81e72465496ac5c9d7df27e8cbdd351e79
   author: cdoyle-pdx
   dependencies:
     - file:
