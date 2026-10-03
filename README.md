@@ -1,15 +1,28 @@
 # eda-catalog
 A repo of apps for Nokia's Event Driven Automation orchestration platform.
 
-apiVersion: appstore.eda.nokia.com/v1  
-kind: Catalog  
-metadata:  
-&emsp;&emsp;name: cdoyle-pdx  
-&emsp;&emsp;namespace: eda-system  
-spec:  
-&emsp;&emsp;enabled: true  
-&emsp;&emsp;refreshInterval: 180  
-&emsp;&emsp;remoteType: git  
-&emsp;&emsp;remoteURL: https://github.com/cdoyle-pdx/eda-catalog  
-&emsp;&emsp;skipTLSVerify: false  
-&emsp;&emsp;title: cdoyle-pdx EDA Apps
+'''
+apiVersion: appstore.eda.nokia.com/v1
+kind: Catalog
+metadata:
+  name: cdoyle-pdx
+  namespace: eda-system
+spec:
+  enabled: true
+  refreshInterval: 180
+  remoteType: git
+  remoteURL: https://github.com/cdoyle-pdx/eda-catalog
+  skipTLSVerify: false
+  title: cdoyle-pdx EDA Apps
+  publicKeys:
+    - title: cdoyle-pdx
+      key: |
+        -----BEGIN PUBLIC KEY-----
+        MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOPyd97Sd7SU9SybQkBfnA7fMc1Ib
+        BMrdNVTrLuunRV2tqo/a83Wh1vJ+qkAwRpfUYeZq88EveiOUUmVg0u/6sQ==
+        -----END PUBLIC KEY-----
+'''
+'''
+kubectl apply -f signingkey.yaml
+kubectl get signingkeys -A
+'''
