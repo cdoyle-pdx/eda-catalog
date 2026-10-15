@@ -66,9 +66,9 @@ spec:
                 type: integer
               initials:
                 description: |-
-                  Initials is the three-letter arcade handle, prefilled from the
+                  Initials is the name on the board, 1-10 capital letters, prefilled from the
                   authenticated EDA username by the UI.
-                pattern: ^[A-Z]{3}$
+                pattern: ^[A-Z]{1,10}$
                 type: string
               level:
                 description: Level reached when the run ended.
