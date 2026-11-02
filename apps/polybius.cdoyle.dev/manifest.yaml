@@ -1,0 +1,81 @@
+apiVersion: core.eda.nokia.com/v1
+kind: Manifest
+metadata:
+  name: polybius
+spec:
+  appInfo:
+    categories:
+      - uncategorised
+    documentation: polybius/docs
+    ociSpecVersion: v1.0.0
+    appImageDigest: sha256:195ce685ee14e667aeacbb53a12a20de512d111b34bf948b36a8ca6ac9064827
+  author: cdoyle-pdx
+  dependencies:
+    - file:
+        path: utils
+    - file:
+        path: common
+    - file:
+        path: core
+    - file:
+        path: polybius/api
+  description: Polybius — a 1981 arcade cabinet that should not exist, playable in EDA. Scores and each player's achievements are kept as EDA resources.
+  group: polybius.cdoyle.dev
+  image: ghcr.io/cdoyle-pdx/polybius:v1.0.0
+  supportedCoreVersions:
+    - v6.0.0
+  title: Polybius
+  version: v1alpha1
+  components:
+    - crd:
+        api:
+          expose: readWrite
+        path: polybius/crds/polybius.cdoyle.dev_polybiusscores.yaml
+        schema: polybius/openapiv3/eda_oas_polybius.cdoyle.dev_polybiusscores.json
+        ui:
+          category: Polybius
+          name: Polybius Scores
+        names:
+          kind: PolybiusScore
+          listKind: PolybiusScoreList
+          plural: polybiusscores
+          singular: polybiusscore
+    - crd:
+        api:
+          expose: readWrite
+        path: polybius/crds/polybius.cdoyle.dev_polybiusprofiles.yaml
+        schema: polybius/openapiv3/eda_oas_polybius.cdoyle.dev_polybiusprofiles.json
+        ui:
+          category: Polybius
+          name: Polybius Profiles
+        names:
+          kind: PolybiusProfile
+          listKind: PolybiusProfileList
+          plural: polybiusprofiles
+          singular: polybiusprofile
+    - crd:
+        api:
+          expose: readWrite
+        path: polybius/crds/polybius.cdoyle.dev_polybiusconfigs.yaml
+        schema: polybius/openapiv3/eda_oas_polybius.cdoyle.dev_polybiusconfigs.json
+        ui:
+          category: Polybius
+          name: Polybius Config
+        names:
+          kind: PolybiusConfig
+          listKind: PolybiusConfigList
+          plural: polybiusconfigs
+          singular: polybiusconfig
+    - cr:
+        path: polybius/k8s/deployment.yaml
+    - cr:
+        path: polybius/k8s/service.yaml
+    - cr:
+        path: polybius/k8s/roles.yaml
+    - cr:
+        path: polybius/k8s/httpproxy.yaml
+    - view:
+        path: polybius/ui/polybius_dashboard.json
+        ui:
+          category: Polybius
+          name: Play Polybius

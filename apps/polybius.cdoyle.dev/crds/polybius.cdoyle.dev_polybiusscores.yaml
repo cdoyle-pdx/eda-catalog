@@ -1,0 +1,103 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.21.0
+  name: polybiusscores.polybius.cdoyle.dev
+spec:
+  group: polybius.cdoyle.dev
+  names:
+    kind: PolybiusScore
+    listKind: PolybiusScoreList
+    plural: polybiusscores
+    singular: polybiusscore
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PolybiusScore is the Schema for the polybiusscores API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: |-
+              PolybiusScoreSpec is one finished Polybius run: one leaderboard entry.
+
+              To rank runs, sort by score, highest first. When two runs share a score, the
+              one with the earlier recordedAt ranks higher. The game reads every
+              PolybiusScore in its score namespace and shows the top entries.
+
+              player and edaUser are deliberately different things. player is the person
+              who actually played, as they entered their name at the end of the run.
+              edaUser is only the EDA account the browser was logged in as. At an event
+              many people play on one shared login, so identify who scored by player.
+
+              Nothing reconciles a PolybiusScore; it is the only record the board keeps.
+            properties:
+              caseId:
+                description: CaseID is the four-digit hex case number shown next to
+                  the entry.
+                pattern: ^[0-9A-F]{4}$
+                type: string
+              crowned:
+                description: |-
+                  Crowned is true when the player defeated IT in the air strike during the
+                  run. Crowned names are shown in gold on the leaderboard.
+                type: boolean
+              edaUser:
+                description: |-
+                  EdaUser is the EDA account the game was logged in as when the score was
+                  recorded (preferred_username from the EDA login token). It identifies the
+                  session, NOT the player: many players may share one account.
+                type: string
+              player:
+                description: |-
+                  Player is the name entered on the game-over screen: 1-10 characters from
+                  A-Z, 0-9, space, dot and dash. It is prefilled from the EDA username.
+                pattern: ^[A-Z0-9 .-]{1,10}$
+                type: string
+              recordedAt:
+                description: |-
+                  RecordedAt is when the run ended, as an RFC3339 timestamp. It breaks ties
+                  between equal scores: the earlier run ranks higher.
+                type: string
+              score:
+                description: Score is the final score for the run. Higher is better.
+                minimum: 0
+                type: integer
+              sector:
+                description: Sector is the sector (level) the run reached.
+                minimum: 1
+                type: integer
+            required:
+            - player
+            - score
+            - sector
+            type: object
+          status:
+            description: |-
+              PolybiusScoreStatus is intentionally empty: nothing reconciles a
+              PolybiusScore, and rank is computed when the board is read.
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

@@ -1,0 +1,14 @@
+apiVersion: polybius.cdoyle.dev/v1alpha1
+kind: PolybiusProfile
+metadata:
+  name: u-admin-0e2c4f1a
+  namespace: eda
+spec:
+  edaUser: admin
+  achievementCount: 3
+  achievements: [first, interrog, pause]
+  bestScore: 48210
+  crowned: false
+  playMinutes: 12
+  updatedAt: "2026-10-29T21:07:40Z"
+  state: "{}"

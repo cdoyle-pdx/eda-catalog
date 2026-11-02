@@ -1,0 +1,12 @@
+apiVersion: polybius.cdoyle.dev/v1alpha1
+kind: PolybiusConfig
+metadata:
+  name: default
+  namespace: eda
+spec:
+  scoreNamespace: eda
+  profileNamespace: eda
+  boardSize: 10
+  defaultPace: booth
+  defaultWindow: demo
+  devTools: false

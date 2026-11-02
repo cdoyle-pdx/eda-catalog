@@ -1,0 +1,13 @@
+apiVersion: polybius.cdoyle.dev/v1alpha1
+kind: PolybiusScore
+metadata:
+  name: score-1793308057045-kenneth
+  namespace: eda
+spec:
+  player: KENNETH
+  score: 48210
+  sector: 4
+  crowned: false
+  caseId: 1A2B
+  edaUser: admin
+  recordedAt: "2026-10-29T21:07:37Z"

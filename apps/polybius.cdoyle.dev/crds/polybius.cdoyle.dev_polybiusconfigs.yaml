@@ -1,0 +1,98 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.21.0
+  name: polybiusconfigs.polybius.cdoyle.dev
+spec:
+  group: polybius.cdoyle.dev
+  names:
+    kind: PolybiusConfig
+    listKind: PolybiusConfigList
+    plural: polybiusconfigs
+    singular: polybiusconfig
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PolybiusConfig is the Schema for the polybiusconfigs API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: |-
+              PolybiusConfigSpec holds the settings an operator may want to change without
+              rebuilding the image. Every field is optional, and so is the resource: with
+              no PolybiusConfig the game uses the defaults below.
+
+              The game reads the first PolybiusConfig it finds (create one, named default,
+              in the eda namespace). Changes apply the next time the game page loads.
+            properties:
+              boardSize:
+                default: 10
+                description: BoardSize is how many entries the leaderboard shows,
+                  from 3 to 10.
+                maximum: 10
+                minimum: 3
+                type: integer
+              defaultPace:
+                description: |-
+                  DefaultPace is the pace a new browser starts on: arcade changes mode
+                  every 60-90 s, booth every 20-30 s. A player's own choice wins.
+                enum:
+                - arcade
+                - booth
+                type: string
+              defaultWindow:
+                description: |-
+                  DefaultWindow is the interrogation timer a new browser starts on:
+                  standard (12-18 min of play) or demo (1-2 min). A player's own choice wins.
+                enum:
+                - standard
+                - demo
+                type: string
+              devTools:
+                description: |-
+                  DevTools shows the test controls under the game screen (test
+                  interrogation, test crash, jump to mode, unlock, reset). Off by default.
+                type: boolean
+              profileNamespace:
+                default: eda
+                description: |-
+                  ProfileNamespace is where PolybiusProfile resources are kept. It is
+                  separate from ScoreNamespace so achievements follow players across boards.
+                type: string
+              scoreNamespace:
+                default: eda
+                description: |-
+                  ScoreNamespace is where PolybiusScore resources are written and read.
+                  Point it at a fresh namespace to give an event its own leaderboard.
+                type: string
+            type: object
+          status:
+            description: |-
+              PolybiusConfigStatus is intentionally empty: nothing reconciles a
+              PolybiusConfig.
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
