@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.2.0
+
+- Progression rebuilt around the interrogations, per game: every game starts in Tube Run with only the tube
+  variants; Force V plus a correct answer grants ROOT and unlocks a non-tube mode; ROOT plus a correct answer breaks
+  open an isolated mode, which joins the rotation if you reach Force V in it without a hit; all three open unlock the
+  Duel.
+- Force V added below ROOT. ROOT now lasts until you are hit, pulses with the music, and makes every mode harder.
+- The Duel reworked: IT changes the rules after each of your clean points, rages at the sixth (into the Dungeon),
+  dismisses you if it has scored, and re-isolates everything if it beats you at Force I.
+- Mirror mode replaced by Backwards. A clearer voice on the Mountain King crash.
+
 ## v1.1.0
 
 - Telemetry: the game logs notable moments as `PolybiusEvent` resources (severity on EDA's alarm scale), and a new
