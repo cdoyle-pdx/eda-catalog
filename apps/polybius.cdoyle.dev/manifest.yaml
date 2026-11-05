@@ -8,7 +8,7 @@ spec:
       - uncategorised
     documentation: polybius/docs
     ociSpecVersion: v1.0.0
-    appImageDigest: sha256:195ce685ee14e667aeacbb53a12a20de512d111b34bf948b36a8ca6ac9064827
+    appImageDigest: sha256:8aa2dab8c896608ca012522d5354d347c17f3b3d12ff0231bd4c478e5ee7a7da
   author: cdoyle-pdx
   dependencies:
     - file:
@@ -21,7 +21,7 @@ spec:
         path: polybius/api
   description: Polybius — a 1981 arcade cabinet that should not exist, playable in EDA. Scores and each player's achievements are kept as EDA resources.
   group: polybius.cdoyle.dev
-  image: ghcr.io/cdoyle-pdx/polybius:v1.0.0
+  image: ghcr.io/cdoyle-pdx/polybius:v1.1.0
   supportedCoreVersions:
     - v6.0.0
   title: Polybius
@@ -66,6 +66,19 @@ spec:
           listKind: PolybiusConfigList
           plural: polybiusconfigs
           singular: polybiusconfig
+    - crd:
+        api:
+          expose: readWrite
+        path: polybius/crds/polybius.cdoyle.dev_polybiusevents.yaml
+        schema: polybius/openapiv3/eda_oas_polybius.cdoyle.dev_polybiusevents.json
+        ui:
+          category: Polybius
+          name: Polybius Telemetry
+        names:
+          kind: PolybiusEvent
+          listKind: PolybiusEventList
+          plural: polybiusevents
+          singular: polybiusevent
     - cr:
         path: polybius/k8s/deployment.yaml
     - cr:

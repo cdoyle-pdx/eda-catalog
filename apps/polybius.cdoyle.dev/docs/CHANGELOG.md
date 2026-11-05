@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.1.0
+
+- Telemetry: the game logs notable moments as `PolybiusEvent` resources (severity on EDA's alarm scale), and a new
+  telemetry page tails them for a second screen beside the cabinet. `PolybiusConfig` gains `telemetry` and `eventKeep`.
+- The island has a new secret, and the game has a new ending. One new achievement, of a new rank.
+
 ## v1.0.0
 
 First release in EDA.

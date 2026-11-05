@@ -1,0 +1,98 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.21.0
+  name: polybiusevents.polybius.cdoyle.dev
+spec:
+  group: polybius.cdoyle.dev
+  names:
+    kind: PolybiusEvent
+    listKind: PolybiusEventList
+    plural: polybiusevents
+    singular: polybiusevent
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: PolybiusEvent is the Schema for the polybiusevents API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: |-
+              PolybiusEventSpec is one moment of play worth seeing in a log: a game started, a sector reached, an
+              achievement unlocked, an interrogation, the subject's loss, the island, the hatch. The game writes them while
+              someone plays, for a telemetry view beside the cabinet (telemetry.html, or this resource's table sorted by
+              name: names count down with time, so name order is newest first).
+
+              Nothing reconciles a PolybiusEvent. The game deletes the oldest once there are more than
+              PolybiusConfig eventKeep in the namespace. Delete them all at any time to clear the log.
+            properties:
+              category:
+                description: |-
+                  Category is what kind of moment this is, for example SESSION, SECTOR, MODE, ACHIEVEMENT,
+                  INTERROGATION, SUBJECT, REGISTER, CORRUPTION, ESCAPE, ISLAND, IT, HATCH or ANOMALY.
+                type: string
+              message:
+                description: Message is the event, in the game's own words.
+                type: string
+              recordedAt:
+                description: RecordedAt is when it happened, as an RFC3339 timestamp.
+                type: string
+              score:
+                description: Score is the score at the moment of the event.
+                minimum: 0
+                type: integer
+              sector:
+                description: Sector is the sector the game had reached.
+                minimum: 0
+                type: integer
+              session:
+                description: Session is the four-digit case number of the game in
+                  progress, shared by every event in one game.
+                type: string
+              severity:
+                description: Severity follows EDA's alarm scale, so the log reads
+                  like the rest of EDA.
+                enum:
+                - critical
+                - major
+                - minor
+                - warning
+                - info
+                type: string
+              subject:
+                description: Subject is the EDA user the game was logged in as.
+                type: string
+            required:
+            - category
+            - message
+            - severity
+            type: object
+          status:
+            description: 'PolybiusEventStatus is intentionally empty: nothing reconciles
+              a PolybiusEvent.'
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}

@@ -1,0 +1,14 @@
+apiVersion: polybius.cdoyle.dev/v1alpha1
+kind: PolybiusEvent
+metadata:
+  name: ev-8206172441796-98-achievement
+  namespace: eda
+spec:
+  category: ACHIEVEMENT
+  severity: info
+  message: "SUBJECT ENROLLED [COMMON] Started your first game."
+  subject: admin
+  session: C3FC
+  sector: 1
+  score: 0
+  recordedAt: "2026-11-04T21:25:58Z"

@@ -10,3 +10,5 @@ spec:
   defaultPace: booth
   defaultWindow: demo
   devTools: false
+  telemetry: true
+  eventKeep: 200

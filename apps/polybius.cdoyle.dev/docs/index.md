@@ -29,7 +29,8 @@ progress are saved to their own profile, so they follow the player to any browse
 </div>
 <div markdown>
 
-* **PolybiusConfig**: optional operator settings (namespaces, board size, defaults, test controls)
+* **PolybiusConfig**: optional operator settings (namespaces, board size, defaults, test controls, telemetry)
+* **PolybiusEvent**: telemetry, one per notable moment of play
 
 </div>
 </div>
@@ -39,7 +40,7 @@ progress are saved to their own profile, so they follow the player to any browse
 <div class="grid" markdown>
 <div markdown>
 
-* **Play Polybius**: launch tile, the score table and the profile table
+* **Play Polybius**: tiles for the game and the telemetry log, the score table, the profile table and the event table
 
 </div>
 </div>
@@ -52,6 +53,7 @@ progress are saved to their own profile, so they follow the player to any browse
 | Leaderboard | `PolybiusScore`, one per recorded run | `eda` (`scoreNamespace`) |
 | Achievements, unlocks, play time | `PolybiusProfile`, one per EDA user | `eda` (`profileNamespace`) |
 | Settings | `PolybiusConfig`, optional, name it `default` | `eda` |
+| Telemetry | `PolybiusEvent`, one per notable moment, oldest pruned past `eventKeep` | `eda` (`scoreNamespace`) |
 
 Scores and profiles are ordinary EDA resources: every save is a transaction, so they are revision-controlled
 and can be reverted or deleted like any other resource. To clear the board, delete the `PolybiusScore`
@@ -59,6 +61,13 @@ resources. To reset one player, delete their `PolybiusProfile`.
 
 The player name on a score is what the player typed at the end of the run (prefilled from the EDA username).
 At an event many people often share one login, so the name, not `edaUser`, identifies who played.
+
+## Telemetry
+
+The game logs what happens as it is played (games started, sectors, achievements, interrogations, losses, the
+island) as `PolybiusEvent` resources. Open **Telemetry** from the dashboard, or
+`/core/httpproxy/v1/polybius/telemetry.html`, in a second window beside the game: it tails the log, newest at the
+bottom. Some of what turns up there matters inside the game.
 
 ## Opened outside EDA
 

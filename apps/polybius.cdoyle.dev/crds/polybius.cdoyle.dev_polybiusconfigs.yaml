@@ -73,6 +73,14 @@ spec:
                   DevTools shows the test controls under the game screen (test
                   interrogation, test crash, jump to mode, unlock, reset). Off by default.
                 type: boolean
+              eventKeep:
+                default: 200
+                description: |-
+                  EventKeep is how many PolybiusEvent resources to keep in the score namespace; the game deletes the
+                  oldest beyond this.
+                maximum: 2000
+                minimum: 20
+                type: integer
               profileNamespace:
                 default: eda
                 description: |-
@@ -85,6 +93,10 @@ spec:
                   ScoreNamespace is where PolybiusScore resources are written and read.
                   Point it at a fresh namespace to give an event its own leaderboard.
                 type: string
+              telemetry:
+                description: Telemetry turns the game's PolybiusEvent log on or off.
+                  Unset means on.
+                type: boolean
             type: object
           status:
             description: |-
