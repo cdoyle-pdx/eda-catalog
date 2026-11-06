@@ -8,6 +8,7 @@ spec:
   score: 48210
   sector: 4
   crowned: false
+  # crown: gold        # gold (Arcade ending) or silver (Booth ending); absent otherwise
   caseId: 1A2B
   edaUser: admin
   recordedAt: "2026-10-29T21:07:37Z"

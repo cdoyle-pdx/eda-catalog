@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.3.0
+
+- Two ways to play, fixed for the whole game when it starts (Settings: Pace). **Arcade** is the full game: a system
+  query every 2-3.5 minutes, a mode change every 90-145 s, achievements on. **Booth** is the show-floor cabinet: a
+  query every 1-2 minutes, a mode change every 60-90 s, achievements off (bar one).
+- System queries (interrogations) now come only on that timer, judged against whatever state you are in when they
+  arrive. Reaching Force V, spinning, not firing and pausing no longer trigger one. The one exception: reaching Force V
+  inside an isolated mode still brings its query at once. The separate interrogation timer setting is gone.
+- Damage is harsher: any hit drops you straight to Force I (from ROOT too), and a hit at Force I ends the game.
+- The island has a far shore past the runway, with a hammock. Booth jams the fire-pit lock and leaves the plane
+  unfuelled; the hammock is the Booth ending, with a silver crown. In Arcade, beat IT in the Air Strike and the plane
+  lands back on the island, IT's kill mark under the cockpit; the far shore is the Arcade ending, with a gold crown.
+- Crowned names are shown in gold or silver. `PolybiusScore` gains an optional `crown` field (`gold` or `silver`).
+- The plane is now a WWII Pacific fighter, on the island and in the Air Strike.
+- Four new achievements. `PolybiusConfig.defaultWindow` is no longer used.
+
 ## v1.2.0
 
 - Progression rebuilt around the interrogations, per game: every game starts in Tube Run with only the tube

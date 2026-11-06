@@ -54,16 +54,19 @@ spec:
                 type: integer
               defaultPace:
                 description: |-
-                  DefaultPace is the pace a new browser starts on: arcade changes mode
-                  every 60-90 s, booth every 20-30 s. A player's own choice wins.
+                  DefaultPace is the pace a new browser starts on. arcade is the full game:
+                  a system query every 2-3.5 min, a mode change every 90-145 s,
+                  achievements, and the Arcade ending. booth is the show-floor cabinet: a
+                  query every 1-2 min, a mode change every 60-90 s, no achievements, and the
+                  Booth ending. A player's own choice wins; it applies from the next game.
                 enum:
                 - arcade
                 - booth
                 type: string
               defaultWindow:
                 description: |-
-                  DefaultWindow is the interrogation timer a new browser starts on:
-                  standard (12-18 min of play) or demo (1-2 min). A player's own choice wins.
+                  DefaultWindow is no longer used (since v1.3.0 the system-query timer is
+                  set by defaultPace) and is kept so existing configs still apply.
                 enum:
                 - standard
                 - demo

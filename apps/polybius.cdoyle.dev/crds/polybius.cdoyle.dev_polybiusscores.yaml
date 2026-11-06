@@ -56,10 +56,21 @@ spec:
                   the entry.
                 pattern: ^[0-9A-F]{4}$
                 type: string
+              crown:
+                description: |-
+                  Crown is the crown the run finished with: gold for the Arcade ending,
+                  silver for the Booth ending. Empty when the run ended any other way.
+                  Silver names are shown in silver on the leaderboard.
+                enum:
+                - gold
+                - silver
+                type: string
               crowned:
                 description: |-
-                  Crowned is true when the player defeated IT in the air strike during the
-                  run. Crowned names are shown in gold on the leaderboard.
+                  Crowned is true when the run finished the Arcade ending: IT defeated in
+                  the air strike, the plane landed, and the nap taken on the far shore.
+                  Crowned names are shown in gold on the leaderboard. Kept for older
+                  readers; crown says the same thing and also covers silver.
                 type: boolean
               edaUser:
                 description: |-

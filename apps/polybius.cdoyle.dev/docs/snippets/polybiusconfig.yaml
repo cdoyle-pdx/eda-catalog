@@ -8,7 +8,6 @@ spec:
   profileNamespace: eda
   boardSize: 10
   defaultPace: booth
-  defaultWindow: demo
   devTools: false
   telemetry: true
   eventKeep: 200
