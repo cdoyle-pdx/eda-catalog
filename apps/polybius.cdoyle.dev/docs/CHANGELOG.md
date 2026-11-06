@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.5.0
+
+- Fabric Crawl is a packet-delivery game: an RJ45 plug carries UCast, BCast and MCast packets from SRC to DST through
+  a spine, across a more maze-like fabric with traffic flowing on the links. At Force V a firewall fails open onto a
+  border leaf (BLeaf-1 or BLeaf-2); reaching it brings a system query, and a hit while it is open patches it shut and
+  drops you to Force IV.
+- Flatland: twice the height range and more width, wide height barriers (over, under, through), an altimeter, and a
+  retro-synth sky.
+- Packet Snake steers in absolute directions.
+- Tube boost and brake animate the ship and recharge for 5 s, with a meter.
+- The level break's accuracy figure is labelled with a different, unexplained metric each time.
+
 ## v1.4.0
 
 - The Air Strike is three stages, each with its own enemies and boss: Open Water (a flying switch with PAM4, then
