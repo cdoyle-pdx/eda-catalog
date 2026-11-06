@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.4.0
+
+- The Air Strike is three stages, each with its own enemies and boss: Open Water (a flying switch with PAM4, then
+  DWDM, lasers), Night Raid (searchlights, flak, night fighters, mine layers, jammers; an IPv4 packet as a train, one
+  attack per header field), and The Burning Ground (a lava field, corrupted enemies, IT).
+- 1941/1943-style pickups: weapon canisters (3-WAY, AUTO, SHOTGUN, LASER, SUPER SHELL), side fighters, and a repair
+  pinwheel after each boss.
+- Developer mode select on the title and pause screens (`[` and `]`, with the test controls showing).
+- God mode: the Konami code on the pause screen. It is also in the Morse rotation.
+- Four new achievements.
+
 ## v1.3.0
 
 - Two ways to play, fixed for the whole game when it starts (Settings: Pace). **Arcade** is the full game: a system
