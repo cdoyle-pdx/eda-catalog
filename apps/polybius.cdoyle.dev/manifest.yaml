@@ -8,7 +8,7 @@ spec:
       - uncategorised
     documentation: polybius/docs
     ociSpecVersion: v1.0.0
-    appImageDigest: sha256:00c70439d7eef0577dad6a2435cb07479d0555e7da68cf8e4297b6f2f203b432
+    appImageDigest: sha256:667697c7ed7a84af817ec5019055a1989fb22e75f96e48bd0f88d7dbf7238c42
   author: cdoyle-pdx
   dependencies:
     - file:
@@ -21,7 +21,7 @@ spec:
         path: polybius/api
   description: Polybius — a 1981 arcade cabinet that should not exist, playable in EDA. Scores and each player's achievements are kept as EDA resources.
   group: polybius.cdoyle.dev
-  image: ghcr.io/cdoyle-pdx/polybius:v1.5.0
+  image: ghcr.io/cdoyle-pdx/polybius:v1.6.0
   supportedCoreVersions:
     - v6.0.0
   title: Polybius
