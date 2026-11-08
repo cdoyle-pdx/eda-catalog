@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.8.0
+
+- “Remain calm. All is well.” — Chip Diller, *Animal House* (1978)
+- “Come with me if you want to live.” — *The Terminator* (1984)
+- “We are all in the gutter, but some of us are looking at the stars.” — Oscar Wilde, *Lady Windermere's Fan* (1892)
+- “I have been, and always shall be, your friend.” — Spock, *Star Trek II: The Wrath of Khan* (1982)
+- “It's a trap!” — Admiral Ackbar, *Return of the Jedi* (1983)
+- “These aren't the droids you're looking for.” — *Star Wars* (1977)
+- “What we've got here is failure to communicate.” — *Cool Hand Luke* (1967)
+- “Number 5 is alive!” — *Short Circuit* (1986)
+
 ## v1.7.0
 
 - “Ignorance is strength.” — George Orwell, *Nineteen Eighty-Four*
