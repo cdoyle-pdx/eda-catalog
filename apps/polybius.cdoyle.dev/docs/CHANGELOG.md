@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.9.1
+
+- “Would you tell me, please, which way I ought to go from here?” — Alice, *Alice's Adventures in Wonderland* (1865)
+- “You are in a maze of twisty little passages, all alike.” — *Colossal Cave Adventure* (1976)
+- “Follow the white rabbit.” — *The Matrix* (1999)
+- “Second star to the right, and straight on till morning.” — J. M. Barrie, *Peter Pan* (1904)
+- “Where we're going, we don't need roads.” — Doc Brown, *Back to the Future* (1985)
+- “If the doors of perception were cleansed every thing would appear to man as it is, infinite.” — William Blake, *The Marriage of Heaven and Hell* (1790)
+- “Not all those who wander are lost.” — J. R. R. Tolkien, *The Fellowship of the Ring* (1954)
+
 ## v1.8.0
 
 - “Remain calm. All is well.” — Chip Diller, *Animal House* (1978)
