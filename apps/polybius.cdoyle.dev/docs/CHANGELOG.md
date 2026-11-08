@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.7.0
+
+- “Ignorance is strength.” — George Orwell, *Nineteen Eighty-Four*
+- “The game is afoot.” — Sherlock Holmes, *The Adventure of the Abbey Grange* (1904)
+- “Greetings, programs!” — Kevin Flynn, *Tron* (1982)
+- “Please stand by.” — every test card, everywhere
+- “Nobody expects the Spanish Inquisition!” — *Monty Python's Flying Circus* (1970)
+- “Time is an illusion. Lunchtime doubly so.” — Douglas Adams
+- “Lasciate ogne speranza, voi ch'intrate.” — Dante Alighieri, the gate of Hell, *Inferno*
+
+## v1.6.1
+
+- “Space is big. Really big.” — Douglas Adams, *The Hitchhiker's Guide to the Galaxy*
+- “Is this the party to whom I am speaking?” — Ernestine the telephone operator, *Laugh-In*
+- “Mostly harmless.” — *The Hitchhiker's Guide to the Galaxy*
+- “There is another system.” — Colossus, *Colossus: The Forbin Project* (1970)
+- “So it goes.” — Kurt Vonnegut, *Slaughterhouse-Five*
+
 ## v1.6.0
 
 - “What hath God wrought?” — the first long-distance telegraph message, Samuel Morse, 1844
