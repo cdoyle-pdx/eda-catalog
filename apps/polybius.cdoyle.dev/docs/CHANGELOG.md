@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.9.2
+
+- “We are on the line 157 337.” — Amelia Earhart, last transmission, July 2, 1937
+- “Everything looks strange, even the ocean.” — attributed to Flight 19, lost over the Bermuda Triangle, 1945
+- “Foo fighters.” — what Allied night-fighter crews called the balls of light that followed their planes, 1944
+- “Kilroy was here.” — written on walls and wreckage wherever the war went, 1940s
+- “I feel the need — the need for speed!” — *Top Gun* (1986)
+- “Once you have tasted flight, you will forever walk the earth with your eyes turned skyward.” — attributed to Leonardo da Vinci
+
 ## v1.9.1
 
 - “Would you tell me, please, which way I ought to go from here?” — Alice, *Alice's Adventures in Wonderland* (1865)
