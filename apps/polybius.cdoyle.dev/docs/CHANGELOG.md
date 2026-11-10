@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.9.4
+
+- “The palest ink is better than the best memory.” — Chinese proverb
+- “Manuscripts don't burn.” — Woland, Mikhail Bulgakov, *The Master and Margarita*
+- “Nothing is written.” — T. E. Lawrence, *Lawrence of Arabia* (1962)
+- “This will go on your permanent record.” — every vice principal, ever
+- “Mene, mene, tekel, upharsin.” — the writing on the wall, the Book of Daniel
+- “Ceci n'est pas une pipe.” — René Magritte, *The Treachery of Images* (1929)
+
+## v1.9.3
+
+- “Have you tried turning it off and on again?” — Roy, *The IT Crowd* (2006)
+- “Nothing in this world can take the place of persistence.” — attributed to Calvin Coolidge
+- “Hold on to your butts.” — Ray Arnold, *Jurassic Park* (1993)
+- “It's not a bug, it's a feature.” — anonymous, every software project since the 1970s
+- “It is pitch black. You are likely to be eaten by a grue.” — *Zork* (1980)
+- “Stay on target.” — Gold Five, *Star Wars* (1977)
+- “Game over, man! Game over!” — Hudson, *Aliens* (1986)
+
 ## v1.9.2
 
 - “We are on the line 157 337.” — Amelia Earhart, last transmission, July 2, 1937

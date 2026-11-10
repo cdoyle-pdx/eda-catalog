@@ -29,7 +29,7 @@ progress are saved to their own profile, so they follow the player to any browse
 </div>
 <div markdown>
 
-* **PolybiusConfig**: optional operator settings (namespaces, board size, defaults, test controls, telemetry)
+* **PolybiusConfig**: optional operator settings (namespaces, board size, defaults, test controls, telemetry, score transactions)
 * **PolybiusEvent**: telemetry, one per notable moment of play
 
 </div>

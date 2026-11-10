@@ -84,6 +84,17 @@ spec:
                 maximum: 2000
                 minimum: 20
                 type: integer
+              nodePings:
+                description: |-
+                  NodePings lets the Fabric Crawl run EDA Ping workflows between the real fabric nodes on the board and show
+                  the replies (success, latency, jitter) as the fabric's pulse. A ping configures nothing on the nodes. Each
+                  workflow is deleted once its result is read. Off by default.
+                type: boolean
+              pingNetworkInstance:
+                description: |-
+                  PingNetworkInstance is the network instance the pings use. Default "mgmt": the nodes ping each other's
+                  management addresses (from each TopoNode's status).
+                type: string
               profileNamespace:
                 default: eda
                 description: |-
@@ -96,6 +107,12 @@ spec:
                   ScoreNamespace is where PolybiusScore resources are written and read.
                   Point it at a fresh namespace to give an event its own leaderboard.
                 type: string
+              scoreTransactions:
+                description: |-
+                  ScoreTransactions writes each saved score as its own named EDA transaction ("Polybius: ALICE scored
+                  120170 in sector 4") and shows the transaction on the leaderboard. Off by default, so playing the game
+                  adds no named entries to EDA's transaction history.
+                type: boolean
               telemetry:
                 description: Telemetry turns the game's PolybiusEvent log on or off.
                   Unset means on.

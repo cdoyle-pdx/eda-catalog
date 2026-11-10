@@ -11,3 +11,6 @@ spec:
   devTools: false
   telemetry: true
   eventKeep: 200
+  scoreTransactions: false
+  nodePings: false
+  pingNetworkInstance: mgmt
