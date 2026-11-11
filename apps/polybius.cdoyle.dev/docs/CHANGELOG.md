@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.9.7
+
+- “Aim small, miss small.” — Benjamin Martin, *The Patriot* (2000)
+- “Do. Or do not. There is no try.” — Yoda, *The Empire Strikes Back* (1980)
+- “Up, up, down, down, left, right, left, right, B, A, start.” — the Konami code, *Gradius* (1985)
+- “It's dangerous to go alone! Take this.” — *The Legend of Zelda* (1986)
+- “A man's got to know his limitations.” — Harry Callahan, *Magnum Force* (1973)
+- “Shall we play a game?” — Joshua, *WarGames* (1983)
+- “I'm sorry, Dave. I'm afraid I can't do that.” — HAL 9000, *2001: A Space Odyssey* (1968)
+
 ## v1.9.6
 
 - “Where we're going, we don't need roads.” — Doc Brown, *Back to the Future* (1985)

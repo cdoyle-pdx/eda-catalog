@@ -45,6 +45,12 @@ spec:
               The game reads the first PolybiusConfig it finds (create one, named default,
               in the eda namespace). Changes apply the next time the game page loads.
             properties:
+              autoFire:
+                description: |-
+                  AutoFire is the auto-fire setting each page load of the game starts with. Off (the default): Space
+                  fires, held to keep firing. On: the guns fire on their own. Players can switch it on the title screen
+                  (Space) until the page is reloaded; a game keeps the setting it started with.
+                type: boolean
               boardSize:
                 default: 10
                 description: BoardSize is how many entries the leaderboard shows,

@@ -51,6 +51,11 @@ spec:
 
               Nothing reconciles a PolybiusScore; it is the only record the board keeps.
             properties:
+              autoFire:
+                description: |-
+                  AutoFire is true when the run was played with auto-fire on (the guns fire on
+                  their own). The leaderboard marks these entries AF.
+                type: boolean
               caseId:
                 description: CaseID is the four-digit hex case number shown next to
                   the entry.

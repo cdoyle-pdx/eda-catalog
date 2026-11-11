@@ -12,5 +12,6 @@ spec:
   telemetry: true
   eventKeep: 200
   scoreTransactions: false
+  autoFire: false
   nodePings: false
   pingNetworkInstance: mgmt
