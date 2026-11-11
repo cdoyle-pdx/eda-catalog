@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.9.6
+
+- “Where we're going, we don't need roads.” — Doc Brown, *Back to the Future* (1985)
+- “Objects in mirror are closer than they appear.” — the passenger-side mirror
+- “Don't look back. Something might be gaining on you.” — Satchel Paige (1953)
+- “It's 106 miles to Chicago, we got a full tank of gas, half a pack of cigarettes, it's dark, and we're wearing sunglasses.” — Elwood Blues, *The Blues Brothers* (1980)
+- “No matter where you go, there you are.” — Buckaroo Banzai, *The Adventures of Buckaroo Banzai Across the 8th Dimension* (1984)
+- “I live my life a quarter mile at a time.” — Dominic Toretto, *The Fast and the Furious* (2001)
+- “Are we there yet?” — the back seat, every road trip, ever
+
 ## v1.9.5
 
 - “The palest ink is better than the best memory.” — Chinese proverb
