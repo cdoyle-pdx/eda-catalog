@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.9.4
+## v1.9.5
 
 - “The palest ink is better than the best memory.” — Chinese proverb
 - “Manuscripts don't burn.” — Woland, Mikhail Bulgakov, *The Master and Margarita*
