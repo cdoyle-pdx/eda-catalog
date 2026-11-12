@@ -1,21 +1,26 @@
-# eda-catalog
-A repo of apps for Nokia's Event Driven Automation orchestration platform.
+# Event Driven Arcade
+Arcade games for Nokia's Event Driven Automation (EDA) platform, played right in the EDA UI.
 
-Use the code below to connect your EDA cluster to my catelog.
+| App | Description |
+|---|---|
+| Snake | Nokia Snake — the arena is drawn from your live fabric topology |
+| Polybius | A 1981 arcade cabinet that should not exist |
+
+Use the code below to connect your EDA cluster to the Event Driven Arcade catalog.
 
 ```
 apiVersion: appstore.eda.nokia.com/v1
 kind: Catalog
 metadata:
-  name: cdoyle-pdx
+  name: event-driven-arcade
   namespace: eda-system
 spec:
   enabled: true
   refreshInterval: 180
   remoteType: git
-  remoteURL: https://github.com/cdoyle-pdx/eda-catalog
+  remoteURL: https://github.com/cdoyle-pdx/event-driven-arcade
   skipTLSVerify: false
-  title: cdoyle-pdx EDA Apps
+  title: Event Driven Arcade
 ```
 
 Create a file named signingkey.yaml and paste the following code into it.
@@ -45,3 +50,4 @@ On your EDA server, install the public key YAML file so you don't get app instal
 kubectl apply -f signingkey.yaml
 kubectl get signingkeys -A
 ```
+
