@@ -35,12 +35,6 @@ spec:
     - title: cdoyle-pdx
       key: |
         -----BEGIN PUBLIC KEY-----
-        MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEOPyd97Sd7SU9SybQkBfnA7fMc1Ib
-        BMrdNVTrLuunRV2tqo/a83Wh1vJ+qkAwRpfUYeZq88EveiOUUmVg0u/6sQ==
-        -----END PUBLIC KEY-----
-    - title: cdoyle-pdx_2026-11
-      key: |
-        -----BEGIN PUBLIC KEY-----
         MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPZSsQ0ijU5UImxzLTGodpismNNoJ
         4xCilwUET5mHvR9Q21vczm040Dn9VITMed47v3waPWlwz+YVba2ij5idjA==
         -----END PUBLIC KEY-----
