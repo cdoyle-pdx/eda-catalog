@@ -4,7 +4,7 @@ Arcade games for Nokia's Event Driven Automation (EDA) platform, played right in
 | App | Description |
 |---|---|
 | Snake | Nokia Snake — the arena is drawn from your live fabric topology |
-| Polybius | A 1981 arcade cabinet that should not exist |
+| Polybius | A weird game I ripped from an old ROM board found in the basement of a PDX Arcade |
 
 Use the code below to connect your EDA cluster to the Event Driven Arcade catalog.
 
