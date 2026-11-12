@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.9.8
+
+- “Thank you Mario! But our princess is in another castle!” — *Super Mario Bros.* (1985)
+- “All your base are belong to us.” — *Zero Wing* (1991)
+- “Finish him!” — *Mortal Kombat* (1992)
+- “It's a trap!” — Admiral Ackbar, *Return of the Jedi* (1983)
+- “A winner is you.” — *Pro Wrestling* (1987)
+- “Good luck. We're all counting on you.” — Dr. Rumack, *Airplane!* (1980)
+- “You have died of dysentery.” — *The Oregon Trail* (1985)
+
 ## v1.9.7
 
 - “Aim small, miss small.” — Benjamin Martin, *The Patriot* (2000)
