@@ -8,7 +8,7 @@ spec:
       - uncategorised
     documentation: snake/docs
     ociSpecVersion: v1.0.0
-    appImageDigest: sha256:c2e301ab5861701b43a47fa0ae2ac36238daf29a6fb8a5d51e06155ce97d1d28
+    appImageDigest: sha256:f29367fa51affb9a2ab301da8f1e30ea9dcf90cd2d42dd0b88125af49b516e7b
   author: cdoyle-pdx
   dependencies:
     - file:
@@ -23,7 +23,7 @@ spec:
         path: snake/intents
   description: Nokia Snake — a playable arcade game that draws its arena from your live fabric topology, with scores stored as EDA resources.
   group: eda.cdoyle.dev
-  image: ghcr.io/cdoyle-pdx/snake:v2.0.1
+  image: ghcr.io/cdoyle-pdx/snake:v2.1.0
   supportedCoreVersions:
     - v6.0.0
   title: Snake
