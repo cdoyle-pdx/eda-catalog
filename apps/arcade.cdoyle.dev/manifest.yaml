@@ -1,0 +1,58 @@
+apiVersion: core.eda.nokia.com/v1
+kind: Manifest
+metadata:
+  name: gamepad
+spec:
+  appInfo:
+    categories:
+      - uncategorised
+    documentation: gamepad/docs
+    settings: gamepad/settings/openapi/eda_oas_arcade.cdoyle.dev_appsettings.json
+    ociSpecVersion: v1.0.0
+    appImageDigest: sha256:5b4990db9c7c5bb209e966396d166382ea976ec202ab61ab9054df697f82747d
+  author: cdoyle-pdx
+  dependencies:
+    - file:
+        path: utils
+    - file:
+        path: common
+    - file:
+        path: core
+    - file:
+        path: gamepad/api
+    - file:
+        path: gamepad/intents
+  description: Arcade Controllers — gamepad support for EDA arcade games. Maps controller buttons to keyboard keys with ControllerProfile resources, and includes a pad tester.
+  group: arcade.cdoyle.dev
+  image: ghcr.io/cdoyle-pdx/gamepad:v0.1.1
+  supportedCoreVersions:
+    - v6.0.0
+  title: Arcade Controllers
+  version: v1alpha1
+  components:
+    - crd:
+        api:
+          expose: readWrite
+        path: gamepad/crds/arcade.cdoyle.dev_controllerprofiles.yaml
+        schema: gamepad/openapiv3/eda_oas_arcade.cdoyle.dev_controllerprofiles.json
+        ui:
+          category: Arcade Controllers
+          name: Controller Profiles
+        names:
+          kind: ControllerProfile
+          listKind: ControllerProfileList
+          plural: controllerprofiles
+          singular: controllerprofile
+    - cr:
+        path: gamepad/k8s/deployment.yaml
+    - cr:
+        path: gamepad/k8s/service.yaml
+    - cr:
+        path: gamepad/k8s/roles.yaml
+    - cr:
+        path: gamepad/k8s/httpproxy.yaml
+    - view:
+        path: gamepad/ui/gamepad_dashboard.json
+        ui:
+          category: Arcade Controllers
+          name: Controller Tester

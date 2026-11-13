@@ -1,0 +1,73 @@
+# Retro-Bit Sega 8-button USB pad in X-Input mode (hold START + B for 5s to switch).
+# As tested: B = button 0, A = button 1 (swapped vs. the manual), X = 2, Y = 3,
+# Z = LT (6), C = RT (7), Mode = Select (8), Start = 9, d-pad on axes 0/1.
+# padMatch "0f0d" is the Retro-Bit vendor id in Chrome's pad id string.
+apiVersion: arcade.cdoyle.dev/v1alpha1
+kind: ControllerProfile
+metadata:
+  name: sega-snake
+  namespace: eda
+spec:
+  description: Retro-Bit Sega pad for Snake — 4-way so diagonals never turn the snake
+  games: [snake]
+  padMatch: "0f0d"
+  fourWay: true
+  players:
+    - pad: 0
+      bindings:
+        - { input: "axis:1-",   key: ArrowUp }
+        - { input: "axis:1+",   key: ArrowDown }
+        - { input: "axis:0-",   key: ArrowLeft }
+        - { input: "axis:0+",   key: ArrowRight }
+        - { input: "button:12", key: ArrowUp }
+        - { input: "button:13", key: ArrowDown }
+        - { input: "button:14", key: ArrowLeft }
+        - { input: "button:15", key: ArrowRight }
+        - { input: "button:0",  key: Enter }               # B: start / confirm
+        - { input: "button:1",  key: Enter }               # A: same
+        - { input: "button:9",  key: P, mode: tap }        # Start: pause
+        - { input: "button:8",  key: M, mode: tap }        # Mode: mute
+---
+apiVersion: arcade.cdoyle.dev/v1alpha1
+kind: ControllerProfile
+metadata:
+  name: sega-polybius
+  namespace: eda
+spec:
+  description: Retro-Bit Sega pad for Polybius — left/right move, A or B fires
+  games: [polybius]
+  padMatch: "0f0d"
+  players:
+    - pad: 0
+      bindings:
+        - { input: "axis:0-",   key: ArrowLeft }
+        - { input: "axis:0+",   key: ArrowRight }
+        - { input: "button:14", key: ArrowLeft }
+        - { input: "button:15", key: ArrowRight }
+        - { input: "button:0",  key: Space }
+        - { input: "button:1",  key: Space }
+        - { input: "button:9",  key: P, mode: tap }
+---
+# Fallback for any other pad in any game: the shim's built-in layout, written
+# out so it can be edited in EDA.
+apiVersion: arcade.cdoyle.dev/v1alpha1
+kind: ControllerProfile
+metadata:
+  name: any-xinput-pad
+  namespace: eda
+spec:
+  description: Any X-Input / standard-mapping pad
+  players:
+    - pad: 0
+      bindings:
+        - { input: "button:12", key: ArrowUp }
+        - { input: "button:13", key: ArrowDown }
+        - { input: "button:14", key: ArrowLeft }
+        - { input: "button:15", key: ArrowRight }
+        - { input: "axis:0-",   key: ArrowLeft }
+        - { input: "axis:0+",   key: ArrowRight }
+        - { input: "axis:1-",   key: ArrowUp }
+        - { input: "axis:1+",   key: ArrowDown }
+        - { input: "button:0",  key: Space }
+        - { input: "button:1",  key: Space }
+        - { input: "button:9",  key: P, mode: tap }

@@ -1,0 +1,165 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.21.0
+  name: controllerprofiles.arcade.cdoyle.dev
+spec:
+  group: arcade.cdoyle.dev
+  names:
+    kind: ControllerProfile
+    listKind: ControllerProfileList
+    plural: controllerprofiles
+    singular: controllerprofile
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ControllerProfile is the Schema for the controllerprofiles API
+        properties:
+          apiVersion:
+            description: |-
+              APIVersion defines the versioned schema of this representation of an object.
+              Servers should convert recognized schemas to the latest internal value, and
+              may reject unrecognized values.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+            type: string
+          kind:
+            description: |-
+              Kind is a string value representing the REST resource this object represents.
+              Servers may infer this from the endpoint the client submits requests to.
+              Cannot be updated.
+              In CamelCase.
+              More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: |-
+              ControllerProfileSpec maps gamepad inputs to keyboard keys for EDA arcade
+              games.
+
+              Games load the shared arcade-input shim from this app's HttpProxy, find
+              profiles with an EQL query (the endpoint is not namespace-qualified, so a
+              profile can live in any namespace), and the shim turns pad input into
+              synthetic key events. A keyboard-only game therefore works with a controller
+              unchanged.
+
+              Selection, most specific first: a ?padprofile=<name> URL override; a profile
+              whose games list names the game and whose padMatch matches the pad; one that
+              names the game; a global profile (empty games) matching the pad; any global
+              profile; the shim's built-in default for "standard"-mapping pads.
+
+              Every field is optional and the shim clamps what it cannot use, so a bad edit
+              degrades to the default instead of breaking a game.
+            properties:
+              deadzonePercent:
+                default: 50
+                description: |-
+                  DeadzonePercent is how far an analog axis must move before an axis
+                  binding counts as pressed.
+                maximum: 90
+                minimum: 10
+                type: integer
+              description:
+                description: Description is free text, e.g. which physical controller
+                  this is for.
+                maxLength: 200
+                type: string
+              expectStandardMapping:
+                default: true
+                description: |-
+                  ExpectStandardMapping makes games show a hint when a connected pad is not
+                  in Chrome's "standard" mapping (e.g. "hold START + B for 5s for X-Input").
+                type: boolean
+              fourWay:
+                default: false
+                description: |-
+                  FourWay holds only the most recently pressed direction, so an 8-way
+                  d-pad cannot send diagonals. Use it for grid games such as Snake.
+                type: boolean
+              games:
+                description: |-
+                  Games this profile applies to, by the name each game passes to the shim
+                  (e.g. snake, polybius). Empty means every arcade game.
+                items:
+                  maxLength: 63
+                  pattern: ^[a-z0-9]([-a-z0-9]*[a-z0-9])?$
+                  type: string
+                maxItems: 32
+                type: array
+              padMatch:
+                description: |-
+                  PadMatch restricts the profile to controllers whose browser gamepad id
+                  contains this text (case-insensitive), e.g. "045e" or "Sega". The pad
+                  tester shows each connected pad's id. Empty matches any controller.
+                maxLength: 100
+                type: string
+              players:
+                description: Players maps each controller (by browser gamepad index)
+                  to key bindings.
+                items:
+                  description: ControllerPlayer is one controller's bindings.
+                  properties:
+                    bindings:
+                      description: |-
+                        Bindings map pad inputs to keys. Several inputs may send the same key;
+                        the key stays down until all of them are released.
+                      items:
+                        description: ControllerBinding maps one pad input to one key.
+                        properties:
+                          input:
+                            description: |-
+                              Input is "button:N" (gamepad button N), or "axis:N+" / "axis:N-" (axis N
+                              past the deadzone in that direction).
+                            pattern: ^(button:\d{1,2}|axis:\d{1,2}[+-])$
+                            type: string
+                          key:
+                            description: Key is the KeyboardEvent.key to send, e.g.
+                              ArrowLeft, Space, P.
+                            maxLength: 16
+                            minLength: 1
+                            type: string
+                          mode:
+                            default: hold
+                            description: |-
+                              Mode is hold (the key is down while the input is held) or tap (one
+                              keydown/keyup per press - use it for pause, so holding START, e.g.
+                              during a controller's mode switch, pauses once instead of repeating).
+                            enum:
+                            - hold
+                            - tap
+                            type: string
+                        required:
+                        - input
+                        - key
+                        type: object
+                      maxItems: 32
+                      type: array
+                    pad:
+                      default: 0
+                      description: Pad is the browser gamepad index, 0-3, in the order
+                        pads were connected.
+                      maximum: 3
+                      minimum: 0
+                      type: integer
+                  type: object
+                maxItems: 4
+                type: array
+            type: object
+          status:
+            description: |-
+              ControllerProfileStatus is intentionally empty.
+
+              ControllerProfile is pure configuration: browsers read it and no intent
+              reconciles it, so there is nothing for a controller to report. The type
+              exists because edabuilder's generated base types reference both a Spec and a
+              Status for every kind.
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
