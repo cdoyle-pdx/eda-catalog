@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.9.9
+
+- "Vancouver! Vancouver! This is it!" - *David Johnston* (1980)
+- "Smile, my boy. It's sunrise." - *Robin Williams* (2014)
+- "Roads? Where we're going, we don't need roads." - *Doc Brown* (1985)
+- "Life is precious. Enjoy every single second. You never know when... Good luck." - *Tony Todd* (2025)
+- "I'm glad it's you." - *Paul Newman* (2002)
+- "I'm just here for guzzalean." *(Mad) Max Rockatansky* (1979)
+- "It's over now!" - *Cpt. Masami Takahama* (1985)
+
 ## v1.9.8
 
 - “Thank you Mario! But our princess is in another castle!” — *Super Mario Bros.* (1985)
