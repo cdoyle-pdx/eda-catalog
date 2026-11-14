@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.9.10
+- "I must not fear. Fear is the mind-killer. Fear is the little-death that brings total obliteration." - *Frank Herbert* (1965)
+- "Stuff your eyes with wonder, live as if you'd drop dead in ten seconds. See the world. It's more fantastic than any dream made or paid for in factories." - *Ray Bradbury* (1953)
+- "The sky above the port was the color of television, tuned to a dead channel." - *William Gibson* (1984)
+- "Any sufficiently advanced technology is indistinguishable from magic." - *Arthur C. Clarke* (1962)
+- "Violence is the last refuge of the incompetent." - *Isaac Asimov* (1951)
+- "Science is too important to be left to the scientists." - *Carl Sagan* (1985)
+
 ## v1.9.9
 
 - "Vancouver! Vancouver! This is it!" - *David Johnston* (1980)
