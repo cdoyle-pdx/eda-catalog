@@ -28,7 +28,8 @@ built-in default.
 |---|---|
 | `games` | Game names (e.g. `snake`, `polybius`). Empty means every game |
 | `padMatch` | Text found in the browser's pad id (e.g. `0f0d`), case-insensitive. Empty means any pad |
-| `fourWay` | Only the newest direction is held, so diagonals can't occur. Use it for grid games |
+| `fourWay` | Only one direction is held at a time, so diagonals can't occur. Use it for grid games |
+| `fourWayMode` | With `fourWay`: `newest` (default) lets the most recent direction win; `hold` ignores diagonals, so the direction changes only on a clean press |
 | `deadzonePercent` | How far an axis must move to count as pressed (10–90, default 50) |
 | `expectStandardMapping` | Show a hint when the pad isn't in X-Input/standard mode |
 | `players[].pad` | Browser gamepad index, 0–3 |

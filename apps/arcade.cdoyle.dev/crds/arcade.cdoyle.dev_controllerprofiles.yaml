@@ -80,6 +80,18 @@ spec:
                   FourWay holds only the most recently pressed direction, so an 8-way
                   d-pad cannot send diagonals. Use it for grid games such as Snake.
                 type: boolean
+              fourWayMode:
+                default: newest
+                description: |-
+                  FourWayMode says what a diagonal does when fourWay is on. newest: the
+                  most recently pressed direction wins, so rolling from left to right
+                  through left+down sends a brief down. hold: a diagonal changes nothing;
+                  the direction changes only when a new one is pressed on its own, so a
+                  thumb rolling across the d-pad never bumps up or down.
+                enum:
+                - newest
+                - hold
+                type: string
               games:
                 description: |-
                   Games this profile applies to, by the name each game passes to the shim

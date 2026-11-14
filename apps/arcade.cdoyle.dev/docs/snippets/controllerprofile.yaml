@@ -34,14 +34,20 @@ metadata:
   name: sega-polybius
   namespace: eda
 spec:
-  description: Retro-Bit Sega pad for Polybius — left/right move, A or B fires
+  description: Retro-Bit Sega pad for Polybius — 4-way hold, so rolling left/right never bumps up or down
   games: [polybius]
   padMatch: "0f0d"
+  fourWay: true
+  fourWayMode: hold
   players:
     - pad: 0
       bindings:
         - { input: "axis:0-",   key: ArrowLeft }
         - { input: "axis:0+",   key: ArrowRight }
+        - { input: "axis:1-",   key: ArrowUp }
+        - { input: "axis:1+",   key: ArrowDown }
+        - { input: "button:12", key: ArrowUp }
+        - { input: "button:13", key: ArrowDown }
         - { input: "button:14", key: ArrowLeft }
         - { input: "button:15", key: ArrowRight }
         - { input: "button:0",  key: Space }

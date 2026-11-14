@@ -9,7 +9,7 @@ spec:
     documentation: gamepad/docs
     settings: gamepad/settings/openapi/eda_oas_arcade.cdoyle.dev_appsettings.json
     ociSpecVersion: v1.0.0
-    appImageDigest: sha256:5b4990db9c7c5bb209e966396d166382ea976ec202ab61ab9054df697f82747d
+    appImageDigest: sha256:1a66e8deb78c5b8f37307fbc5c064646ca37ffc91028543ecf79e132136f4031
   author: cdoyle-pdx
   dependencies:
     - file:
@@ -24,7 +24,7 @@ spec:
         path: gamepad/intents
   description: Arcade Controllers — gamepad support for EDA arcade games. Maps controller buttons to keyboard keys with ControllerProfile resources, and includes a pad tester.
   group: arcade.cdoyle.dev
-  image: ghcr.io/cdoyle-pdx/gamepad:v0.1.1
+  image: ghcr.io/cdoyle-pdx/gamepad:v0.1.3
   supportedCoreVersions:
     - v6.0.0
   title: Arcade Controllers

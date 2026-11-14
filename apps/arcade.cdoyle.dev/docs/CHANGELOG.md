@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.1.3
+
+- New `fourWayMode: hold` for 4-way profiles: a diagonal keeps the current
+  direction, and the direction changes only on a clean press of a new one.
+  Rolling the d-pad between left and right no longer bumps up or down.
+  `newest` (the default) behaves as before.
+- 4-way switches now release the old direction before pressing the new one,
+  so a game never sees two directions held at once.
+- Tester: the 4-way checkbox is now a Directions choice (8-way, 4-way newest,
+  4-way hold).
+
+## v0.1.2
+
+- Games now pick a pad-specific profile even when the controller was used
+  before the shim finished loading. Chrome announces a pad only once, and a
+  game that loads the shim after its EDA sign-in could miss it, leaving the
+  built-in default in use.
+- The console logs every profile change:
+  `[arcade-input] <game> uses profile: <name> (pad: ...)`.
+
 ## v0.1.1
 
 - Controller Tester: Save to EDA no longer fails with "no token present"
